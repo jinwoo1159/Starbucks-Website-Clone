@@ -1,6 +1,12 @@
+"use strict";
+
+/**
+ * 검색창 제어
+ */
+// 검색창 요소(.search) 찾기.
 const searchEl = document.querySelector(".search");
 const searchInputEl = searchEl.querySelector("input");
-
+// 검색창 요소를 클릭하면 실행.
 searchEl.addEventListener("click", function () {
   searchInputEl.focus();
 });
@@ -20,8 +26,10 @@ searchInputEl.addEventListener("blur", function () {
   // searchInputEl 요소의 placeholder 속성을 빈 문자열로 설정합니다.
 });
 
+/**
+ * 페이지 스크롤에 따른 요소 제어
+ */
 const badgeEl = document.querySelector("header .badges");
-
 // 'scroll' 이벤트가 발생하면 지정된 함수를 실행하도록 이벤트 리스너를 설정합니다.
 window.addEventListener(
   "scroll",
@@ -45,3 +53,18 @@ window.addEventListener(
 );
 // _.throtle(함수, 시간)
 // gsap.to(요소, 지속시간, 옵션);
+
+/**
+ * 순서대로 나타나는 기능
+ */
+
+// 나타날 요소들(.fade-in) 찾기.
+const fadeEls = document.querySelectorAll(".visual .fade-in");
+// 나타날 요소들을 하나씩 반복해서 처리!
+fadeEls.forEach(function (fadeEl, index) {
+  // 각 요소들을 순서대로(delay) 보여지게 함!
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * 0.7,
+    opacity: 1,
+  });
+});
