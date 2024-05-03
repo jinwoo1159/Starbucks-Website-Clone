@@ -5,6 +5,7 @@ body {
   font-weight: 400; /* 400 두께의 기본 글꼴 사용 */
   line-height: 1.4; /* 줄의 높이 부분 설정 */
   font-family: "Nanum Gothic", sans-serif;
+  height: 3000px;
 }
 img {
   display: block; /* img(인라인 요소) 하단에 Baseline 공백을 제거 */
@@ -22,8 +23,11 @@ a {
 
 /* HEADER */
 header {
+  width: 100%;
+  position: fixed;
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  top: 0;
 }
 header > .inner {
   height: 120px;
@@ -177,4 +181,16 @@ header .main-menu .item .item__contents .contents__texture h4 {
 header .main-menu .item .item__contents .contents__texture p {
   color: #669900;
   margin: 4px 0 14px; /* top-4, left,right-0 bottom-14 */
+}
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden; /* 배지 경계를 벗어나는 내용을 숨깁니다. */
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 15);
+  cursor: pointer;
 }
