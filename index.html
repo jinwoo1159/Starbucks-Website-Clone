@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Starbucks Coffee Korea</title>
+  <title>스타벅스</title>
 
   <!--Open Graph-->
   <meta property="og:type" content="website" />
@@ -36,7 +36,6 @@
 
   <!--Google Material Icons-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-
   <link rel="stylesheet" href="./css/main.css">
 
   <!--Lodash-->
@@ -44,13 +43,14 @@
     integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <!-- gsap -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <!-- SWIPER -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+  <!-- SWIPER 11v -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script defer src="./js/main.js"></script>
 </head>
@@ -439,13 +439,14 @@
   <!--NOTICE-->
   <section class="notice">
 
+    <!--NOTICE LINE-->
     <div class="notice-line">
       <div class="bg-left"></div>
       <div class="bg-right"></div>
       <div class="inner">
         <div class="inner__left">
           <h2>공지사항</h2>
-          <div class="swiper-container">
+          <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a href="javascript:void(0)">크리스마스 & 연말연시 스타벅스 매장 영업시간 변경 안내</a>
@@ -471,6 +472,13 @@
             <div class="material-icons">upload</div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!--PROMOTION-->
+    <div class="promotion">
+      <div class="swiper">
+        TEST
       </div>
     </div>
 

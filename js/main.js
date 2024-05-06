@@ -35,7 +35,7 @@ window.addEventListener(
   "scroll",
   // throttle 함수는 주어진 시간(여기서는 300ms(0.3초)) 동안 이벤트 처리를 한번만 실행하도록 제한합니다.
   _.throttle(function () {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if (window.scrollY > 500) {
       // badgeEl의 불투명도를 0.6초 동안 0(완전 투명)으로 변경하여 배지를 숨깁니다.
       gsap.to(badgeEl, 0.6, {
@@ -70,8 +70,9 @@ fadeEls.forEach(function (fadeEl, index) {
 });
 
 // new Swiper(선택자, 옵션);
-new Swiper(".notice-line .swiper-container", {
-  direction: "vertical",
-  autoplay: true,
-  loop: true,
+new Swiper(".notice-line .swiper", {
+  // Optional parameters
+  direction: "vertical", // 슬라이드 진행 방향(수직)
+  autoplay: true, // 자동재생 여부
+  loop: true, // 반복재생 여부
 });
