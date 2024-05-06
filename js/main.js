@@ -116,3 +116,34 @@ promotionToggleBtn.addEventListener("click", function () {
     promotionEl.classList.remove("hide");
   }
 });
+
+// 범위 랜덤 함수(소수점 2자리까지)
+function random(min, max) {
+  // Math.random()은 0이상 1미만의 랜덤한 숫자를 생성
+  // 이를 (max - min)에 곱하면 원하는 범위의 랜덤한 숫자를 생성할 수 있음
+  // 여기에 min을 더하면 min과 max 사이의 랜덤한 숫자를 얻을 수 있음
+  // .toFixed(2)를 사용하여 소수점 두 자리까지 표시
+  // 반환된 값은 문자열이므로 parseFloat()을 사용하여 숫자로 변환
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+}
+
+function floatingObject(selector, delay, size) {
+  // gsap 라이브러리의 'to' 메서드를 사용하여 애니메이션을 적용합니다.
+  // 첫 번째 인자는 애니메이션을 적용할 요소의 선택자입니다.
+  // 두 번째 인자는 애니메이션의 지속 시간입니다.
+  // 세 번째 인자는 애니메이션의 옵션을 객체 형태로 전달합니다.
+  gsap.to(selector, random(1.5, 2.5), {
+    // y축으로 20만큼 움직입니다.
+    y: size,
+    // 애니메이션을 무한히 반복합니다.
+    repeat: -1,
+    // 'yoyo' 옵션은 애니메이션의 반복이 끝날 때 애니메이션을 원래 상태로 되돌리는지를 결정합니다.
+    // 'true'는 되돌린다는 값을 의미합니다.
+    yoyo: true,
+    ease: "Power1.easeInOut", // 애니메이션의 가속 및 감속을 정의하는 가속도 곡선
+    delay: random(0, delay), // 애니메이션 시작 전 지연 시간(초 단위)
+  });
+}
+floatingObject(".floating1", 1, 15);
+floatingObject(".floating2", 0.5, 15);
+floatingObject(".floating3", 1.5, 20);
