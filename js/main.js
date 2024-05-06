@@ -72,7 +72,27 @@ fadeEls.forEach(function (fadeEl, index) {
 // new Swiper(선택자, 옵션);
 new Swiper(".notice-line .swiper", {
   // Optional parameters
-  direction: "vertical", // 슬라이드 진행 방향(수직)
+  direction: "vertical", // 슬라이드 진행 방향(수직), 기본 값은 "horizontal"
   autoplay: true, // 자동재생 여부
   loop: true, // 반복재생 여부
+});
+new Swiper(".promotion .swiper", {
+  slidesPerView: 3, // 한번에 보여줄 슬라이드 개수, 기본 값은 1
+  spaceBetween: 10, // 슬라이드 사이 여백
+  centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+  loop: true, // 반복재생 여부
+  // autoplay: true 도 가능하지만 객체 데이터로 할당하면 추가적인 옵션 설정 가능
+  autoplay: {
+    // 자동재생 여부
+    delay: 5000, // 시작시간 설정(기본 값은 3000)
+  }, // 자동재생 여부
+  pagination: {
+    // 페이저 버튼 사용자 설정
+    el: ".promotion .swiper-pagination", // 페이지 번호 요소 선택자
+    clickable: true, // 사용자의 페이지 번호 요소 제어 가능 요소 (사용자가 단순히 시각적으로만 보는것 뿐만아니라 눌러서 제어할 수 있는지에 대한 여부)
+  },
+  navigation: {
+    prevEl: ".promotion .swiper-prev",
+    nextEl: ".promotion .swiper-next",
+  },
 });
