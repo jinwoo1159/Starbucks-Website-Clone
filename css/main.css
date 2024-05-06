@@ -250,7 +250,7 @@ header .badges .badge {
 /* VISUAL */
 .visual {
   margin-top: 120px; /* 120px인 이유는 header > .inner 부분이 height: 120px이기 때문 */
-  background-image: url(../images/visual_bg.jpg);
+  background-image: url("../images/visual_bg.jpg");
   background-position: center;
 }
 .visual .inner {
@@ -383,6 +383,11 @@ header .badges .badge {
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
+  transition: height 0.4s; /* 높이의 변화를 0.4초 동안 부드럽게 전환 */
+  overflow: hidden; /* 요소의 크기가 줄어들어 내부 내용이 밖으로 넘칠 경우, 넘치는 부분을 숨깁니다. */
+}
+.notice .promotion.hide {
+  height: 0; /* 'hide' 클래스가 추가되면 프로모션 영역의 높이를 0으로 설정 */
 }
 .notice .promotion .swiper {
   width: calc(819px * 3 + 20px);

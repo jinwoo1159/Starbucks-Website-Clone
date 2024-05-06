@@ -96,3 +96,23 @@ new Swiper(".promotion .swiper", {
     nextEl: ".promotion .swiper-next",
   },
 });
+
+// 슬라이드 영역 요소 검색!
+const promotionEl = document.querySelector(".promotion");
+// 슬라이드 영역를 토글하는 버튼 검색!
+const promotionToggleBtn = document.querySelector(".toggle-promotion");
+// isHidePromotion 변수를 false로 초기화합니다. 이 변수는 프로모션 영역이 표시되는지 (false) 아니면 숨겨져 있는지 (true)를 나타냅니다.
+let isHidePromotion = false;
+// 변수 값이 변경될 수 있으므로 let를 사용하여 선언합니다.
+promotionToggleBtn.addEventListener("click", function () {
+  // isHidePromotion 변수의 값을 부정하여 재할당합니다. 즉, true면 false로, false면 true로 변합니다.
+  isHidePromotion = !isHidePromotion;
+  // isHidePromotion 값이 true이면
+  if (isHidePromotion) {
+    // promotionEl 요소에 "hide" 클래스를 추가하여 숨깁니다.
+    promotionEl.classList.add("hide");
+  } else {
+    // 그렇지 않으면 promotionEl 요소에서 "hide" 클래스를 제거하여 보입니다.
+    promotionEl.classList.remove("hide");
+  }
+});
