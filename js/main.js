@@ -144,6 +144,8 @@ function floatingObject(selector, delay, size) {
     delay: random(0, delay), // 애니메이션 시작 전 지연 시간(초 단위)
   });
 }
+
+// floatingObject 함수에 선택자, 지연 시간, 크기를 인자로 전달하여 호출
 floatingObject(".floating1", 1, 15);
 floatingObject(".floating2", 0.5, 15);
 floatingObject(".floating3", 1.5, 20);
