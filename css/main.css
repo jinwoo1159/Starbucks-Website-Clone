@@ -624,3 +624,52 @@ header .badges .badge {
 .pick-your-favorite .text-group .description {
   margin-bottom: 40px;
 }
+
+/* RESERVE STORE */
+.reserve-store {
+  background-image: url("../images/reserve_store_bg.jpg");
+  background-repeat: no-repeat; /* 배경 이미지 반복 없음 */
+  background-position: center; /* 배경 이미지 위치 중앙 */
+  background-attachment: fixed; /* 배경 이미지를 고정하고, viewport에 고정합니다 */
+  background-size: cover; /* 배경 이미지 크기를 컨테이너에 맞춤 */
+}
+.reserve-store .inner {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reserve-store .medal {
+  width: 334px;
+  height: 334px;
+  perspective: 600px;
+}
+.reserve-store .medal .front,
+.reserve-store .medal .back {
+  width: 334px;
+  height: 334px;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: 1s;
+}
+.reserve-store .medal .front {
+  transform: rotateY(0deg);
+}
+.reserve-store .medal:hover .front {
+  transform: rotateY(180deg);
+}
+.reserve-store .medal .back {
+  transform: rotateY(-180deg);
+}
+.reserve-store .medal:hover .back {
+  transform: rotateY(0deg);
+}
+.reserve-store .medal .back .btn {
+  position: absolute;
+  top: 240px;
+  /* 가운데 배치를 하려면 요소의 가로너비가 존재해야 하는데하는데 */
+  /* btn이라는 공용 클래스에 가로 너비를 지정해놨기 때문에 수평 가운데 배치가 가능 */
+  left: 0;
+  right: 0;
+  margin: auto;
+}
