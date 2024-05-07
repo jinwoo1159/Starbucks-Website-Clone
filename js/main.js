@@ -97,6 +97,19 @@ new Swiper(".promotion .swiper", {
   },
 });
 
+new Swiper(".awards .swiper", {
+  // Optional parameters
+  // direction: 'horizontal', // 수평 슬라이드
+  autoplay: true, // 자동재생 여부
+  loop: true, // 반복재생 여부
+  spaceBetween: 30, // 슬라이드 사이 여백
+  slidesPerView: 5, // 한번에 보여줄 슬라이드 개수, 기본 값은 1
+  navigation: {
+    prevEl: ".awards .swiper-prev",
+    nextEl: ".awards .swiper-next",
+  },
+});
+
 // 슬라이드 영역 요소 검색!
 const promotionEl = document.querySelector(".promotion");
 // 슬라이드 영역를 토글하는 버튼 검색!
@@ -149,3 +162,18 @@ function floatingObject(selector, delay, size) {
 floatingObject(".floating1", 1, 15);
 floatingObject(".floating2", 0.5, 15);
 floatingObject(".floating3", 1.5, 20);
+
+/**
+ * 요소가 화면에 보여짐 여부에 따른 요소 관리
+ */
+// ".section.scroll-spy" 클래스를 갖는 모든 요소를 선택합니다.
+const spyEls = document.querySelectorAll("section.scroll-spy");
+spyEls.forEach(function (spyEl) {
+  new ScrollMagic.Scene({
+    // 감시할 장면(Scene)을 추가
+    triggerElement: spyEl, // 애니메이션이 적용될 요소를 트리거로 설정합니다.
+    triggerHook: 0.8, // 트리거가 발생하는 위치를 화면의 0.8(80%) 지점으로 설정합니다.
+  })
+    .setClassToggle(spyEl, "show") // "show" 클래스를 애니메이션 트리거시 토글합니다.
+    .addTo(new ScrollMagic.Controller());
+});

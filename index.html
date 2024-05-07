@@ -25,34 +25,30 @@
 
   <!--파비콘-->
   <link rel="icon" href="./favicon.png">
-
   <!--브라우저 스타일 초기화-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
-
   <!--Google Fonts - 나눔고딕-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-
   <!--Google Material Icons-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="./css/main.css">
-
   <!--Lodash-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
     integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
   <!-- gsap -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
   <!-- SWIPER 11v -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!--ScrollMagic-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
 
-  <!-- <script defer src="./js/youtube.js"></script> -->
+  <script defer src="./js/youtube.js"></script>
   <script defer src="./js/main.js"></script>
 </head>
 
@@ -539,15 +535,15 @@
   </section>
 
   <!-- SEASON PRODUCT -->
-  <section class="season-product">
+  <section class="season-product scroll-spy">
     <div class="inner">
       <img src="./images/floating3.png" alt="Icon" class="floating floating3" />
-      <img src="./images/season_product_image.png" alt="" class="product" />
+      <img src="./images/season_product_image.png" alt="" class="product back-to-position to-right delay-0" />
 
       <div class="text-group">
-        <img src="./images/season_product_text1.png" alt="" class="title" />
-        <img src="./images/season_product_text2.png" alt="" class="description" />
-        <div class="more">
+        <img src="./images/season_product_text1.png" alt="" class="title back-to-position to-left delay-1" />
+        <img src="./images/season_product_text2.png" alt="" class="description back-to-position to-left delay-2" />
+        <div class="more back-to-position to-left delay-3">
           <a href="javascript:void(0)" class="btn">자세히 보기</a>
         </div>
       </div>
@@ -556,27 +552,27 @@
 
 
   <!-- RESERVE COFFEE -->
-  <section class="reserve-coffee">
+  <section class="reserve-coffee scroll-spy">
     <div class="inner">
-      <img src="./images/reserve_logo.png" alt="" class="reserve-logo" />
+      <img src="./images/reserve_logo.png" alt="" class="reserve-logo back-to-position to-right delay-0" />
       <div class="text-group">
-        <img src="./images/reserve_text.png" alt="" class="description" />
-        <div class="more">
+        <img src="./images/reserve_text.png" alt="" class="description back-to-position to-right delay-1" />
+        <div class="more back-to-position to-right delay-2">
           <a href="javascript:void(0)" class="btn btn--gold">자세히 보기</a>
         </div>
       </div>
-      <img src="./images/reserve_image.png" alt="" class="product" />
+      <img src="./images/reserve_image.png" alt="" class="product back-to-position to-left delay-3" />
     </div>
   </section>
 
 
   <!-- PICK YOUR FAVORITE -->
-  <section class="pick-your-favorite">
+  <section class="pick-your-favorite scroll-spy">
     <div class="inner">
       <div class="text-group">
-        <img src="./images/favorite_text1.png" alt="" class="title" />
-        <img src="./images/favorite_text2.png" alt="" class="description" />
-        <div class="more">
+        <img src="./images/favorite_text1.png" alt="" class="title back-to-position to-right delay-0" />
+        <img src="./images/favorite_text2.png" alt="" class="description back-to-position to-right delay-1" />
+        <div class="more back-to-position to-right delay-2">
           <a href="javascript:void(0)" class="btn btn--white">자세히 보기</a>
         </div>
       </div>
@@ -600,6 +596,72 @@
     </div>
   </section>
 
+  <!-- FIND STORE -->
+  <section class="find-store scroll-spy">
+    <div class="inner">
+      <img src="./images/find_store_texture1.png" alt="" class="texture1" />
+      <img src="./images/find_store_texture2.png" alt="" class="texture2" />
+      <img src="./images/find_store_picture1.jpg" alt="" class="picture picture1 back-to-position to-right delay-0" />
+      <img src="./images/find_store_picture2.jpg" alt="" class="picture picture2 back-to-position to-right delay-1" />
+
+      <div class="text-group">
+        <img src="./images/find_store_text1.png" alt="" class="title back-to-position to-left delay-0">
+        <img src="./images/find_store_text2.png" alt="" class="description back-to-position to-left delay-1">
+        <div class="more back-to-position to-left delay-2">
+          <a href="javascript:void(0)" class="btn">매장찾기</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="awards">
+    <div class="inner">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/awards_slide1.jpg" alt="대통령 표창">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/awards_slide2.jpg" alt="대통령 표창 (3년 연속)">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/awards_slide3.jpg" alt="우수사업주 인증">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/awards_slide4.jpg" alt="경연대회 대상">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/awards_slide5.jpg" alt="대한상의회장상">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/awards_slide6.jpg" alt="기업사회공헌 활동 부문">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/awards_slide7.jpg" alt="KSI 1위 (5년 연속)">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/awards_slide8.jpg" alt="KS-SQI 1위 (5년 연속)">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/awards_slide9.jpg" alt="커피전문점 부문 (4년 연속)">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/awards_slide10.jpg" alt="동반성장 부문 (4년 연속)">
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-prev">
+        <div class="material-icons">arrow_back</div>
+      </div>
+      <div class="swiper-next">
+        <div class="material-icons">arrow_forward</div>
+      </div>
+
+    </div>
+  </section>
 
 
 </body>
