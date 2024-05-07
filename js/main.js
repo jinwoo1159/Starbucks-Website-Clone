@@ -130,6 +130,9 @@ promotionToggleBtn.addEventListener("click", function () {
   }
 });
 
+/**
+ * 부유하는 요소 관리
+ */
 // 범위 랜덤 함수(소수점 2자리까지)
 function random(min, max) {
   // Math.random()은 0이상 1미만의 랜덤한 숫자를 생성
@@ -140,6 +143,7 @@ function random(min, max) {
   return parseFloat((Math.random() * (max - min) + min).toFixed(2));
 }
 
+// 부유하는(떠 다니는) 요소를 만드는 함수
 function floatingObject(selector, delay, size) {
   // gsap 라이브러리의 'to' 메서드를 사용하여 애니메이션을 적용합니다.
   // 첫 번째 인자는 애니메이션을 적용할 요소의 선택자입니다.
@@ -177,3 +181,9 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, "show") // "show" 클래스를 애니메이션 트리거시 토글합니다.
     .addTo(new ScrollMagic.Controller());
 });
+
+/**
+ * 올해가 몇 년도인지 계산
+ */
+const thisyear = document.querySelector(".this-year");
+thisyear.textContent = new Date().getFullYear();

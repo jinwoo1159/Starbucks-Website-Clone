@@ -5,7 +5,6 @@ body {
   font-weight: 400; /* 400 두께의 기본 글꼴 사용 */
   line-height: 1.4; /* 줄의 높이 부분 설정 */
   font-family: "Nanum Gothic", sans-serif;
-  height: 6000px;
 }
 img {
   display: block; /* img(인라인 요소) 하단에 Baseline 공백을 제거 */
@@ -790,4 +789,79 @@ header .badges .badge {
 .awards .swiper-next:hover {
   background-color: #fff;
   color: #333;
+}
+
+/* FOOTER */
+footer {
+  background-color: #272727;
+  border-top: 1px solid #333;
+}
+footer .inner {
+  padding: 40px 0 60px 0; /* 상 40px, 우 0px, 하 60px, 좌 0px */
+}
+footer .menu {
+  display: flex;
+  justify-content: center;
+}
+footer .menu li {
+  position: relative;
+}
+/* 가상 요소는 HTML 문서에 실제로 존재하지 않는 요소를 대상에 스타일을 적용하는 데 사용  */
+footer .menu li::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #555;
+  position: absolute; /* absolute가 지정된 요소는 block요소 처럼 동작합니다. */
+  top: 0;
+  bottom: 0;
+  right: -1px;
+  margin: auto;
+}
+footer .menu li:last-child::before {
+  display: none; /* 마지막 항목의 가상 요소의 디스플레이를 없애서 보이지 않게 설정합니다. */
+}
+footer .menu li a {
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 15px;
+  display: block;
+}
+footer .menu li a.green {
+  color: #669900;
+}
+footer .btn-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+}
+footer .btn-group .btn {
+  font-size: 12px;
+  margin-right: 10px; /* 사용하지 않아도 괜찮습니다. */
+}
+footer .btn-group .btn:last-child {
+  margin-right: 0;
+}
+footer .info {
+  margin-top: 30px;
+  text-align: center;
+}
+/* 인라인 속성이기 때문에 flex 필요없음 */
+footer .info span {
+  margin-right: 20px;
+  color: #999;
+  font-size: 12px;
+}
+footer .info span:last-child {
+  margin-right: 0;
+}
+footer .copyright {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+footer .logo {
+  margin: 30px auto 0; /* 상 30px, 좌우 auto, 하 0 */
 }
