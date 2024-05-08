@@ -1,3 +1,4 @@
+"use strict";
 // Youtube IFrame API를 비동기로 로드합니다.
 let tag = document.createElement("script");
 tag.src = "https://www.youtube.com/iframe_api"; // 스크립트 소스를 Youtube IFrame API로 설정합니다.
