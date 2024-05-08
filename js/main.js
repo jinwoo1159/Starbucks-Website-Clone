@@ -30,17 +30,25 @@ searchInputEl.addEventListener("blur", function () {
  * 페이지 스크롤에 따른 요소 제어
  */
 const badgeEl = document.querySelector("header .badges");
+const toTopEl = document.querySelector("#to-top");
+
 // 'scroll' 이벤트가 발생하면 지정된 함수를 실행하도록 이벤트 리스너를 설정합니다.
 window.addEventListener(
   "scroll",
+  // 스크롤이 지나치게 자주 발생하는 것을 조절(throttle, 일부러 부하를 줌)
   // throttle 함수는 주어진 시간(여기서는 300ms(0.3초)) 동안 이벤트 처리를 한번만 실행하도록 제한합니다.
   _.throttle(function () {
-    // console.log(window.scrollY);
+    // 페이지 스크롤 위치가 500px이 넘는 경우
     if (window.scrollY > 500) {
       // badgeEl의 불투명도를 0.6초 동안 0(완전 투명)으로 변경하여 배지를 숨깁니다.
+      // gsap.to(요소, 지속시간, 옵션);
       gsap.to(badgeEl, 0.6, {
         opacity: 0,
         display: "none",
+      });
+      // 상단으로 가는 스크롤 버튼 보이기!
+      gsap.to("toTopEl", 0.2, {
+        x: 0, // 버튼이 원래 위치에 보이게 됩니다.
       });
     } else {
       // badgeEl의 불투명도를 0.6초 동안 1(완전 불투명)으로 변경하여 배지를 보이게 합니다.
@@ -48,16 +56,27 @@ window.addEventListener(
         opacity: 1,
         display: "block",
       });
+      // 상단으로 가는 스크롤 버튼 숨기기!
+      gsap.to("toTopEl", 0.2, {
+        x: 100, // 버튼이 숨어질 수 있도록 오른쪽으로 100px 이동합니다.
+      });
     }
   }, 300) // 이벤트 처리를 300ms 간격으로 제한합니다.
 );
 // _.throtle(함수, 시간)
 // gsap.to(요소, 지속시간, 옵션);
 
+// 상단으로 스크롤 버튼을 클릭하는 경우
+toTopEl.addEventListener("click", function () {
+  // 페이지 위치를 최상단으로 부드럽게(0.7초 동안) 이동
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
+});
+
 /**
  * 순서대로 나타나는 기능
  */
-
 // 나타날 요소들(.fade-in) 찾기.
 const fadeEls = document.querySelectorAll(".visual .fade-in");
 // 나타날 요소들을 하나씩 반복해서 처리!
@@ -142,7 +161,6 @@ function random(min, max) {
   // 반환된 값은 문자열이므로 parseFloat()을 사용하여 숫자로 변환
   return parseFloat((Math.random() * (max - min) + min).toFixed(2));
 }
-
 // 부유하는(떠 다니는) 요소를 만드는 함수
 function floatingObject(selector, delay, size) {
   // gsap 라이브러리의 'to' 메서드를 사용하여 애니메이션을 적용합니다.
